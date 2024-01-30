@@ -1,0 +1,361 @@
+
+import java.util.Scanner;
+
+public class Amazon
+{
+	private String password="",name="",db_name=name;
+	public static void main(String[] args) 
+	{
+		Catogories catogories=new Catogories();
+		catogories.display();
+		catogories.Choose();
+		Scanner s=new Scanner(System.in);
+	}
+	public void setpassword(String password)
+	{
+		if(name.equalsIgnoreCase(db_name)&&password.length()>=8)
+		{
+			this.password=password;
+		}
+	}
+}
+interface Amazon1
+{
+	
+	public static final long mob = 0;
+	public void display();
+	
+	
+}
+interface Cost 
+{
+	public void cost();
+	
+}
+abstract class display implements Cost,Amazon1
+{
+	public abstract  void working();
+}
+class Catogories extends display
+{
+	
+	Amazon amazon=new Amazon();
+	Scanner s=new Scanner(System.in);
+	int quantity,cost,tQ,price;
+	long mob;
+	String select1="Login",select2="Register",select="",email="",password1="",password="",name="";
+	String cato1="men",cato2="women",cato3="kids",cato4="Homedecors",cato5="kitchen";
+	String optionW1="WestrenWare",optionW2="EhnicWare",optionW3="Beauty",optionW4="jewellery";
+	String optionm1="topware",optionm2="Bottomware",optionm3="Accessories",optionm4="Footware";
+	String optionk1="caps",optionk2="dresses",optionk3="BeautyCare",optionk4="Healthcare";
+	String optionh1="Walldecors",optionh2="furniture",optionh3="idols";
+	String optionki1="kitchenStorange",optionki2="cookware",optionki3="kitchenAccessories";
+	String iM1="Tshirts",iM2="Shirts";
+	public void display()
+	{
+		 //String select="";
+		System.out.println("\t \t \t \t \t \t ~~~~~~~~~~ Welcome to  Amazon ~~~~~~~~~~~");
+		System.out.println();
+		Scanner s1=new Scanner(System.in);
+		System.out.println("Do you want to login or register : ");
+		select=s1.next();
+		System.out.println();
+		working();
+	}
+	public void working()
+	{
+		//Scanner s2=new Scanner(System.in);
+		if(select.equalsIgnoreCase("login"))
+		{
+			System.out.println("Enter your EmailId :");
+			email=s.next();
+			System.out.println("Enter your Password :");
+			this.password=s.next();
+			String db_password=password;
+			if(this.password.equals(db_password))
+			{
+				System.out.println("Successfully login!!");
+			}																
+			else
+			{
+				System.out.println("Incorrect Password");
+			}
+		}
+		else if(select.equalsIgnoreCase("Register"))
+		{
+			System.out.println("Enter your Name :");
+			this.name=s.next();
+			System.out.println("Enter your Mobile number :");
+			mob=s.nextInt();
+			System.out.println("Enter your EmailId :");
+			email=s.next();
+			System.out.println("Create your Password :");
+			this.password=s.next();
+			System.out.println("ReEnter your Password");
+			password1=s.next();
+			if(this.password.equals(password1))
+			{
+				System.out.println("Successfully Registered!!");
+			}																
+			else
+			{
+				System.out.println("Incorrect Password");
+			}
+		}
+		else
+		{
+			System.out.println("Please select login or register only");
+		}
+	}
+
+	void Choose()
+	{
+		System.out.println("Catogories\n"+cato1+"\n"+cato2+"\n"+cato3+"\n"+cato4+"\n"+cato5);
+		System.out.println("Choose your catgorie : ");
+		String cato=s.next();
+		if(cato.equalsIgnoreCase("men"))
+		{
+			System.out.println(optionm1+"\n"+ optionm2+"\n"+ optionm3+"\n"+ optionm4);
+			System.out.println("enter which item you want: ");
+			String item=s.next();
+			if(item.equalsIgnoreCase("topware"))
+			{
+				System.out.println("Shirts"+"\nTshirts");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceMT=299;
+				price=price+priceMT*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("bottomware"))
+			{
+				System.out.println("Trackpants \njeans"+"\nTrousers");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceMB=599;
+				price=price+priceMB*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("Accessories"))
+			{
+				System.out.println("Watches \nBelts \nWallets \nBags");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceMA=149;
+				price=price+priceMA*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("footware"))
+			{
+				System.out.println("CasualShoes \nSportShoes \nSandals \nCrocks");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceMF=199;
+				price=price+priceMF*quantity;
+				cost();
+			}
+			else
+			{
+				System.out.println("Not Avalabile");
+			}
+			
+		}
+		else if(cato.equalsIgnoreCase("women"))
+		{
+			System.out.println(optionW1+"\n"+ optionW2+"\n"+ optionW3+"\n"+ optionW4);
+			System.out.println("enter which item you want: ");
+			String item=s.next();
+			if(item.equalsIgnoreCase("ehnicware"))
+			{
+				System.out.println("Sarees \nKurtis \nKurthaSets \n DressMaterials");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceWE=249;
+				price=price+priceWE*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("westernware"))
+			{
+				System.out.println("Tops \nJeans \nSkirts \nPalazzos");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceWW=300;
+				price=price+priceWW*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("Beauty"))
+			{
+				System.out.println("Makeup \nSkincare \nWellness");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceWB=999;
+				price=price+priceWB*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("jewellery"))
+			{
+				System.out.println("JewellerySet \nEarrings \nRings \nStuds");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceWJ=749;
+				price=price+priceWJ*quantity;
+				cost();
+			}
+			else
+			{
+				System.out.println("Not Avalabile");
+			}
+		}
+		else if(cato.equalsIgnoreCase("kids"))
+		{
+			System.out.println(optionk1+"\n"+ optionk2+"\n"+ optionk3+"\n"+ optionk4);
+			System.out.println("enter which item you want: ");
+			String item=s.next();
+			if(item.equalsIgnoreCase("caps"))
+			{
+				System.out.println("Classo \nStylo");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceKC=100;
+				price=price+priceKC*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("dresses"))
+			{
+				System.out.println("Girls \nBoys");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceKD=1679;
+				price=price+priceKD*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("Beautycare"))
+			{
+				System.out.println("towels \nbedding");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceKB=149;
+				price=price+priceKB*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("healthcare"))
+			{
+				System.out.println("SkinCare \nSanitizer \nOralCare");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceKH=399;
+				price=price+priceKH*quantity;
+				cost();
+			}
+			else
+			{
+				System.out.println("Not Avalabile");
+			}
+		}
+		else if(cato.equalsIgnoreCase("Homedecors"))
+		{
+			System.out.println(optionh1+"\n"+ optionh2+"\n"+ optionh3);
+			System.out.println("enter which item you want: ");
+			String item=s.next();
+			if(item.equalsIgnoreCase("WallDecors"))
+			{
+				System.out.println("Flowers \nStickers");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceHW=200;
+				price=price+priceHW*quantity;
+				cost();
+			}
+			else if(item.equalsIgnoreCase("Idles"))
+			{
+				System.out.println("Gods \nFlowerawase");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceHI=176;
+				price=price+priceHI*quantity;
+				cost();
+			}
+			
+			else if(item.equalsIgnoreCase("Furniture"))
+			{
+				System.out.println("BedSheet \nDoormat \nCushions \nMattress");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceHF=449;
+				price=price+priceHF*quantity;
+				cost();
+			}
+			else
+			{
+				System.out.println("Not Avalabile");
+			}
+		}
+		else if(cato.equalsIgnoreCase("Kitchen"))
+		{
+			System.out.println(optionki1+"\n"+ optionki2+"\n"+ optionki3);
+			System.out.println("enter which item you want: ");
+			String item=s.next();
+			if(item.equalsIgnoreCase("KitchenAccessories"))
+			{
+				System.out.println("ChoppingBords /nSlice");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceKIA=169;
+				price=price+priceKIA*quantity;
+				 cost();
+			}
+			else if(item.equalsIgnoreCase("cookware"))
+			{
+				System.out.println("GrillPan \nRollingPin");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceKIC=270;
+				price=price+priceKIC*quantity;
+				 cost();
+			}
+			
+			
+			else if(item.equalsIgnoreCase("KitchenStorage"))
+			{
+				System.out.println("CultleryRacks \nUtensilHolder");
+				System.out.println("Enter Quantity: ");
+				quantity=s.nextInt();
+				tQ=tQ+quantity;
+				int priceKIS=149;
+				price=price+priceKIS*quantity;
+				 cost();
+			}
+			else
+			{
+				System.out.println("Not Avalabile");
+			}
+		}
+		else
+		{
+			System.out.println("Sorry!!! this catogorie is not avaliable");
+		}
+	}
+	public void cost()
+	{
+		cost=tQ*price;
+		System.out.println("Total Ordered Quantity : "+quantity+" Total cost is: "+cost);
+	}
+	
+}
